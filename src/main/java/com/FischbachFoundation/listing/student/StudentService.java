@@ -1,10 +1,10 @@
 package com.FischbachFoundation.listing.student;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
 
 @Service
 public class StudentService {
@@ -19,8 +19,13 @@ public class StudentService {
 		return studentRepository.findAll();
 	}
 
-	@PostMapping
 	public void addNewStudent(Student student) {
-		System.out.println(student);
+		Optional<Student> studentOptional = studentRepository
+			.findStudentByEmail(student.getEmail());
+			if (studentOptional.isPresent()) {
+				throw new IllegalStateException("email taken");
+			}
+			studentRepository.save(student);
+
 	}
 }
