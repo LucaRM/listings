@@ -15,11 +15,11 @@ public class Player extends Person{
 	}
 
 	public Player(Long id, String name, String email, LocalDate dateOfBirth , String type) {
-		super(id, name, email, dateOfBirth, "Player");
+		super(id, name, email, dateOfBirth, "player");
 	}
 
 	public Player(String name, String email, LocalDate dateOfBirth, String type) {
-		super(name, email, dateOfBirth, "Player");
+		super(name, email, dateOfBirth, "player");
 	}
 
 }

@@ -1,6 +1,7 @@
 package com.FischbachFoundation.listing.person;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table
@@ -21,10 +23,12 @@ public class Person {
     private String email;
 	private LocalDate dateOfBirth;
 	private String type;
+	@Transient
+	private Integer age;
 
 	public enum Type {
-		Student,
-		Player
+		student,
+		player
 	}
 
 	public Person() {
@@ -85,6 +89,14 @@ public class Person {
 		this.type = type;
 	}
 
+	public Integer getAge() {
+		return Period.between(this.dateOfBirth, LocalDate.now()).getYears();
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
 	@Override
 	public String toString() {
 		return "Person {" +
@@ -92,6 +104,7 @@ public class Person {
 			", name='" + name + '\'' +
 			", email='" + email + '\'' +
 			", dateOfBirth=" + dateOfBirth +
+			", age=" + age +
 			", type='" + type + '\'' +
 			'}';
 	}

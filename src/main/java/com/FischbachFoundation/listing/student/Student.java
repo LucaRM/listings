@@ -16,11 +16,11 @@ public class Student extends Person{
 	}
 
 	public Student(Long id, String name, String email, LocalDate dateOfBirth, String type) {
-		super(id, name, email, dateOfBirth, "Student");
+		super(id, name, email, dateOfBirth, "student");
 	}
 
 	public Student(String name, String email, LocalDate dateOfBirth, String type) {
-		super(name, email, dateOfBirth, "Student");
+		super(name, email, dateOfBirth, "student");
 	}
 
 }
