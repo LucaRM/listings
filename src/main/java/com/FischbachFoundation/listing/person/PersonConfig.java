@@ -9,18 +9,17 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.FischbachFoundation.listing.player.Player;
-import com.FischbachFoundation.listing.race.RaceRepository;
 import com.FischbachFoundation.listing.student.Student;
 
 @Configuration
 public class PersonConfig {
 	@Bean
-	CommandLineRunner commandLineRunnerPerson(RaceRepository repository) {
+	CommandLineRunner commandLineRunnerPerson(PersonRepository repository) {
 		return args -> {
 			Student mariam = new Student(
 				"Mariam",
 				"mariam.jamal@gmail.com",
-				LocalDate.of(2000, Month.JANUARY, 5),
+				LocalDate.of(2000, Month.JANUARY, 18),
 				"student"
 			);
 

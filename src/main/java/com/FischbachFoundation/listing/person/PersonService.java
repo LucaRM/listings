@@ -7,14 +7,12 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.FischbachFoundation.listing.race.RaceRepository;
-
 @Service
 public class PersonService {
-	private final RaceRepository personRepository;
+	private final PersonRepository personRepository;
 
 	@Autowired
-	public PersonService(RaceRepository personRepository) {
+	public PersonService(PersonRepository personRepository) {
 		this.personRepository = personRepository;
 	}
 
