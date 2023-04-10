@@ -9,15 +9,19 @@ import jakarta.persistence.Table;
 @Table
 
 public class Subrace extends Race{
+	private Integer additionalAbilityScoreIncrease;
+
 	public Subrace() {
 	}
 
-	public Subrace(Long id, String name, Integer abilityScoreIncrease, Integer age, String size, Integer speed, String darkvision, String[] languages, String type) {
+	public Subrace(Long id, String name, Integer abilityScoreIncrease, Integer age, String size, Integer speed, String darkvision, String[] languages, Integer additionalAbilityScoreIncrease) {
 		super( id, name, abilityScoreIncrease, age, size, speed, darkvision, languages);
+		this.additionalAbilityScoreIncrease = additionalAbilityScoreIncrease;
 	}
 
-	public Subrace(String name, Integer abilityScoreIncrease, Integer age, String size, Integer speed, String darkvision, String[] languages, String type) {
+	public Subrace(String name, Integer abilityScoreIncrease, Integer age, String size, Integer speed, String darkvision, String[] languages, Integer additionalAbilityScoreIncrease) {
 		super( name, abilityScoreIncrease, age, size, speed, darkvision, languages);
+		this.additionalAbilityScoreIncrease = additionalAbilityScoreIncrease;
 	}
 
 }
